@@ -1,0 +1,49 @@
+---
+title: "Marriages in Toronto before and after the pandemic"
+author: 
+  - Yanzun Jiang
+date: today
+date-format: long
+abstract: "The statistical analysis of Toronto marriage data befor and after the pandemic."
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
+
+```
+
+
+# Introduction
+
+We use @citeR, @rohan and @opendatatoronto.
+
+The remainder of this paper is structured as follows. @sec-mydatasection
+
+
+
+# Data {#sec-mydatasection}
+
+Some of our data is of marriages (@fig-marriage), from @opendatatoronto.
+
+```{r}
+#| label: fig-marriage
+#| fig-cap: Marriages in Toronto
+#| echo: false
+
+data |> 
+  ggplot(aes(x = date, y = marriage_licenses)) +
+  geom_point()
+```
+
+This is the scatterlpot that shows the data of marriages in Toronto before and after the pandemic.
+
+# References
