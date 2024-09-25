@@ -15,7 +15,7 @@ raw_data <- read_csv("data/raw_data/raw_data.csv")
 
 cleaned_data <-
   raw_data |>
-  janitor::clean_names() |> 
+  janitor::clean_names() |>
   separate(col = time_period,
            into = c("year", "month"),
            sep = "-") |> 
